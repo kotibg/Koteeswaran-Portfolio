@@ -23,12 +23,19 @@
     footer { text-align:center; padding:2rem; background:#1f2937; color:#fff; }
     .contact a { display:block; margin:0.3rem 0; }
     .arrow { transition:0.3s; }
+    form { display:flex; flex-direction:column; gap:1rem; }
+    input, textarea { padding:0.8rem; border:1px solid #ccc; border-radius:6px; font-size:1rem; width:100%; }
+    button { background:#1f2937; color:#fff; padding:0.8rem; border:none; border-radius:6px; font-size:1rem; cursor:pointer; transition:0.3s; }
+    button:hover { background:#374151; }
+    .meeting-btn { background:#2563eb; }
+    .meeting-btn:hover { background:#1d4ed8; }
     @media (max-width:600px) { section { padding:1rem; } }
 </style>
 </head>
 <body>
 
 <header>
+<img src="profile.jpg" alt="Koteeswaran T" style="width:120px;height:120px;border-radius:50%;border:3px solid #fff;margin-bottom:10px;">
 <h1>Koteeswaran T</h1>
 <h2>Chief Technology Officer (CTO) | iGaming • eCommerce • Web3 • DevOps</h2>
 </header>
@@ -69,7 +76,7 @@
 <h3 onclick="toggleContent('techstack')">Tech Stack <span class="arrow">▼</span></h3>
 <div id="techstack" class="collapsible content">
 <ul>
-<li>Languages: PHP, JavaScript, Node.js, Python</li>
+<li>Languages: PHP, JavaScript, Node.js</li>
 <li>Frameworks: Laravel, Express.js</li>
 <li>Cloud: AWS (EC2, S3, CloudWatch), Docker</li>
 <li>Blockchain: Web3.js, Metamask, Solidity Basics</li>
@@ -86,7 +93,8 @@
 <ul>
 <li>Operated nodes for Vana, Subspace, Manta, Mira networks.</li>
 <li>Participated in Airdrop & Testnet rewards (EAT, Mantle, Nillion).</li>
-<li>Staking and yield optimization studies for TON, SOL, SUI.</li>
+<li>Staking and yield optimization studies for TON, SOL.</li>
+<li>BTC mining done in P4.</li>
 <li>Internal dashboards for reward analytics and mining ROI.</li>
 </ul>
 </div>
@@ -97,6 +105,18 @@
 <a href="mailto:koteeswaran.t@hotmail.com">📧 Email: koteeswaran.t@hotmail.com</a>
 <a href="https://wa.me/919445712235">📱 WhatsApp: +91 9445712235</a>
 <a href="https://www.linkedin.com/in/koteeswaran-koti/">🔗 LinkedIn</a>
+<br>
+<button class="meeting-btn" onclick="window.open('https://teams.live.com/l/meetup-join/19:meeting_koteeswaran.t@hotmail.com')">📅 Schedule a Meeting on Teams</button>
+</section>
+
+<section>
+<h3>Message Me</h3>
+<form action="https://formspree.io/f/mzzbgkvv" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
 </section>
 
 <footer>&copy; 2025 Koteeswaran T | CTO Portfolio</footer>
