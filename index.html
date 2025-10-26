@@ -7,18 +7,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script defer>
-    // small helper: on DOM ready initialize cursor tokens & interactions
     document.addEventListener('DOMContentLoaded', () => {
       const root = document.documentElement;
       const tokenLayer = document.createElement('div');
       tokenLayer.id = 'token-layer';
       document.body.appendChild(tokenLayer);
-
-      // create pool of token elements reused for performance
       const POOL = [];
       const POOL_SIZE = 30;
       const colors = ['#00E6A6','#8B5CF6','#FFB86B','#5CC8FF','#FFD166'];
-
       for (let i=0;i<POOL_SIZE;i++){
         const el = document.createElement('div');
         el.className = 'token';
@@ -26,9 +22,7 @@
         tokenLayer.appendChild(el);
         POOL.push(el);
       }
-
       let poolIdx = 0;
-
       function spawnToken(x,y,dx,dy,size=18,life=700,color=null){
         const el = POOL[poolIdx];
         poolIdx = (poolIdx+1)%POOL_SIZE;
@@ -40,26 +34,21 @@
         el.style.background = color || colors[Math.floor(Math.random()*colors.length)];
         el.style.opacity = '1';
         el.style.pointerEvents = 'none';
-
         requestAnimationFrame(()=>{
           el.style.transition = `transform ${life}ms cubic-bezier(.2,.8,.2,1), opacity ${life}ms linear`;
           el.style.transform = `translate(${x + dx}px, ${y + dy}px) scale(0.2) rotate(${Math.random()*720}deg)`;
           el.style.opacity = '0';
         });
       }
-
-      // mouse move creates small trailing tokens
       let last = 0;
       document.addEventListener('mousemove', (e)=>{
         const now = performance.now();
-        if (now - last < 25) return; // limit spawn rate
+        if (now - last < 25) return;
         last = now;
         const speed = Math.random()*18 + 6;
         const ang = (Math.random()-0.5)*Math.PI/3;
         spawnToken(e.clientX, e.clientY, Math.cos(ang)*speed, Math.sin(ang)*speed, 12, 700);
       });
-
-      // click creates a splash
       document.addEventListener('click', (e)=>{
         const count = 14 + Math.floor(Math.random()*8);
         for (let i=0;i<count;i++){
@@ -70,8 +59,6 @@
           spawnToken(e.clientX, e.clientY, dx, dy, 14, 900);
         }
       });
-
-      // small gentle float for background SVG tokens
       const bgTokens = document.querySelectorAll('.bg-token');
       function floatTokens(){
         bgTokens.forEach((t,i)=>{
@@ -82,7 +69,6 @@
         requestAnimationFrame(floatTokens);
       }
       floatTokens();
-
     });
   </script>
   <style>
@@ -96,42 +82,27 @@
     }
     html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 20%, rgba(139,92,246,0.08), transparent 8%), radial-gradient(1000px 500px at 90% 80%, rgba(255,177,103,0.06), transparent 10%), linear-gradient(180deg,var(--bg-1),var(--bg-2)); color:#e9eef8;}
     *{box-sizing:border-box}
-
-    /* Token layer sits above background but under UI */
     #token-layer{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:5}
     .token{position:fixed;width:12px;height:12px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.5),inset 0 -3px 6px rgba(255,255,255,0.06);mix-blend-mode:screen}
-
     header{position:sticky;top:18px;z-index:20;padding:18px;display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto}
     .logo{display:flex;align-items:center;gap:12px}
     .logo .mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#5cc8ff33,#8b5cf633);display:grid;place-items:center;font-weight:800}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
-
     main{max-width:1120px;margin:40px auto;padding:40px 20px;position:relative;z-index:10}
     .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
     .hero-left h1{font-size:48px;margin:0 0 8px 0;line-height:1.02}
     .hero-left p{color:var(--muted);font-size:18px;margin:0 0 22px}
     .cta{display:flex;gap:12px}
-    .btn{background:linear-gradient(90deg,var(--accent),#8B5CF6);border:none;padding:12px 16px;border-radius:12px;color:#06101a;font-weight:700;cursor:pointer}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:16px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
-
+    .btn{background:linear-gradient(90deg,var(--accent),#8B5CF6);border:none;padding:12px 16px;border-radius:12px;color:#06101a;font-weight:700;cursor:pointer;text-decoration:none}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:16px;box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:none;}
     .bg-panel{position:relative;padding:24px;border-radius:18px;overflow:hidden}
     .bg-panel svg{position:absolute;right:-20px;top:-40px;opacity:0.12}
     .bg-token{position:absolute;width:64px;height:64px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#ffffff06,#00000006);backdrop-filter:blur(6px);}
     .bg-token.small{width:44px;height:44px;border-radius:10px}
-
-    /* Projects grid */
     .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
     .project{padding:14px;border-radius:12px}
-
     footer{max-width:1120px;margin:40px auto;padding:20px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-
-    /* Responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr;}
-      .hero-left h1{font-size:36px}
-      .projects{grid-template-columns:1fr}
-    }
+    @media (max-width:920px){.hero{grid-template-columns:1fr;}.hero-left h1{font-size:36px}.projects{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -157,76 +128,8 @@
         <p>Project Manager & Full-stack builder focused on eCommerce, iGaming, and Web3. I ship MVPs, run testnets, and manage teams end-to-end.</p>
         <div class="cta">
           <a class="btn" href="#projects">See Projects</a>
-          <a class="btn" href="#contact">Schedule</a>
+          <a class="btn" href="#contact">Contact Me</a>
         </div>
-
-        <div style="margin-top:22px;display:flex;gap:12px;align-items:center">
-          <div class="card" style="display:flex;gap:12px;align-items:center">
-            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#5cc8ff,#8b5cf6);display:grid;place-items:center;font-weight:800">Δ</div>
-            <div>
-              <div style="font-weight:700">Latest — National777 (demo)</div>
-              <div style="font-size:13px;color:var(--muted)">Casino platform P&L, settlements & admin tooling.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <aside class="card bg-panel">
-        <!-- floating SVG tokens as background decor -->
-        <div class="bg-token" style="left:18px;top:8px" aria-hidden>
-          <!-- simple token SVG -->
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" class="bg-token-svg"><circle cx="12" cy="12" r="10" fill="#5CC8FF" opacity="0.95"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="#06101a" font-weight="700">KT</text></svg>
-        </div>
-        <div class="bg-token small" style="right:20px;top:20px" aria-hidden>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#8B5CF6" opacity="0.95"/></svg>
-        </div>
-
-        <h3 style="margin-top:0">Quick stats</h3>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <div style="min-width:120px">
-            <div style="font-weight:800;font-size:20px">12+</div>
-            <div style="font-size:13px;color:var(--muted)">Projects shipped</div>
-          </div>
-          <div style="min-width:120px">
-            <div style="font-weight:800;font-size:20px">8</div>
-            <div style="font-size:13px;color:var(--muted)">Years experience</div>
-          </div>
-          <div style="min-width:120px">
-            <div style="font-weight:800;font-size:20px">Web3</div>
-            <div style="font-size:13px;color:var(--muted)">Testnets & nodes</div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;font-size:13px;color:var(--muted)">Hover/click anywhere to see token effects — these are lightweight DOM particles; swap token SVGs if you prefer coin art.</div>
-      </aside>
-    </section>
-
-    <section id="projects" style="margin-top:28px">
-      <h2>Selected projects</h2>
-      <div class="projects">
-        <div class="project card">
-          <div style="font-weight:700">National777 — Casino Platform</div>
-          <div style="font-size:13px;color:var(--muted)">PHP-based platform with B2B features, manual settlements, advanced P&L reports.</div>
-        </div>
-        <div class="project card">
-          <div style="font-weight:700">BikeTaxi — Mobile web</div>
-          <div style="font-size:13px;color:var(--muted)">End-to-end booking flow, driver admin, payments integration.</div>
-        </div>
-        <div class="project card">
-          <div style="font-weight:700">E-Commerce — Storefront</div>
-          <div style="font-size:13px;color:var(--muted)">Full eCommerce stack, admin, sample products, Google signup.</div>
-        </div>
-        <div class="project card">
-          <div style="font-weight:700">Testnet Nodes & Mining</div>
-          <div style="font-size:13px;color:var(--muted)">Setups for Mantle, Vana, Subspace and custom nodes.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" style="margin-top:36px">
-      <h2>About</h2>
-      <div class="card" style="padding:20px">
-        <p style="margin:0;color:var(--muted)">I manage cross-functional teams to deliver production software — from requirements to monitoring. I enjoy early-stage Web3 experiments and shipping stable backend systems.</p>
       </div>
     </section>
 
@@ -239,10 +142,11 @@
         </div>
         <div>
           <div style="font-weight:700">WhatsApp</div>
-          <div style="color:var(--muted)">+91 9952782235</div>
+          <div><a class="btn" href="https://wa.me/919445712235" target="_blank">Chat Now</a></div>
         </div>
-        <div style="margin-left:auto">
-          <a class="btn" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <div>
+          <div style="font-weight:700">Teams</div>
+          <div><a class="btn" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_${encodeURIComponent('koteeswaran.t@hotmail.com')}@thread.tacv2/0?context=%7b%7d" target="_blank">Join Invite</a></div>
         </div>
       </div>
     </section>
@@ -259,4 +163,3 @@
   </script>
 </body>
 </html>
-
