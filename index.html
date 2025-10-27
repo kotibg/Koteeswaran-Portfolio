@@ -43,19 +43,16 @@ ul li { margin-bottom:10px; }
 .contact-card { background:rgba(255,255,255,0.03); padding:18px; border-radius:16px; flex:1; min-width:200px; }
 .contact-card div { margin-bottom:8px; }
 footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:14px; }
-#token-layer{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:5}
-.token{position:fixed;width:12px;height:12px;border-radius:50%;mix-blend-mode:screen}
-#project-samples .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-#project-samples .project-card { background:rgba(255,255,255,0.03); padding:12px; border-radius:16px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
-#project-samples .project-card:hover { transform: translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.5); }
-#project-samples .project-card img { object-fit:cover; margin-bottom:12px; border-radius:12px; width:100%; }
-#project-samples .project-card h3 { font-size:18px; margin-bottom:6px; }
-#project-samples .project-card p { font-size:14px; color: var(--muted); }
+/* CV Styles */
+.cv-container { background: rgba(255,255,255,0.03); border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:20px; overflow:auto; }
+.cv-section h3 { color: var(--accent); margin-bottom: 8px; font-size: 18px; opacity:0; transform:translateY(20px); transition: all 0.6s ease; }
+.cv-section p, .cv-section li { color: #e9eef8; font-size: 14px; line-height: 1.6; opacity:0; transform:translateY(20px); transition: all 0.6s ease; }
+.cv-section ul { list-style: disc; padding-left: 20px; }
+.cv-section ul li { margin-bottom: 10px; }
+.cv-section.visible h3, .cv-section.visible p, .cv-section.visible li { opacity:1; transform:translateY(0); }
 </style>
 </head>
 <body>
-
-<div id="token-layer"></div>
 
 <header>
   <div class="logo">
@@ -75,7 +72,7 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
 </header>
 
 <main>
-  <!-- 1. Hero -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
       <h1>Driving IT & Web3 Projects to Success</h1>
@@ -84,21 +81,51 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     <img src="profile.jpg" alt="Koteeswaran T" class="profile-pic">
   </section>
 
-  <!-- 2. Curriculum Vitae -->
+  <!-- CV -->
   <section id="cv">
-    <h2>My Curriculum Vitae</h2>
-    <div style="white-space:pre-line; font-size:14px; line-height:1.6; background:rgba(255,255,255,0.03); padding:20px; border-radius:12px;">
-Koteeswaran
-+91 9445712235 | koteeswaran.t@hotmail.com | India
-Project Manager / Scrum Master
-
-8+ years of experience driving complex IT and business transformation projects with expertise in Agile, Scrum, and Waterfall methodologies.
-...
-<!-- Full CV content as before -->
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-container">
+      <div class="cv-section">
+        <h3>Contact</h3>
+        <p>+91 9445712235 | <a href="mailto:koteeswaran.t@hotmail.com">koteeswaran.t@hotmail.com</a> | India</p>
+      </div>
+      <div class="cv-section">
+        <h3>Profile</h3>
+        <p>Project Manager / Scrum Master with 8+ years of experience driving complex IT and business transformation projects. Skilled in Agile, Scrum, Waterfall, and cross-functional team leadership. Strong track record in stakeholder management, process optimization, and aligning technology solutions with business goals.</p>
+      </div>
+      <div class="cv-section">
+        <h3>Work Experience</h3>
+        <ul>
+          <li><strong>B&G Technologies | Project Manager / Scrum Master (Jun 2024 – Present)</strong><br>
+            Led multiple IT initiatives including National777.com, API integrations, settlement systems, Scrum ceremonies, and cross-functional team management.
+          </li>
+          <li><strong>FABC Solutions | IT Project Coordinator (Mar 2022 – May 2024)</strong><br>
+            Planned and tracked software development projects. Implemented Jira & Confluence for Agile tracking. Supported client demos and UAT sessions.
+          </li>
+          <li><strong>Gamenation | Scrum Master (Nov 2019 – Feb 2022)</strong><br>
+            Led Agile delivery for E-commerce projects. Coordinated payment gateway integration, order management, loyalty modules. Facilitated sprint planning and retrospectives.
+          </li>
+          <li><strong>IndiGo Airlines | Associate Project Manager (Feb 2014 – Oct 2019)</strong><br>
+            Managed airline IT projects: reservation systems, crew management, e-ticketing, loyalty programs. Mentored junior project coordinators and facilitated sprints.
+          </li>
+        </ul>
+      </div>
+      <div class="cv-section">
+        <h3>Key Skills</h3>
+        <p>Agile Project Management | Scrum | Sprint Planning & Execution | Stakeholder Management | Risk & Issue Tracking | Jira & Confluence | UAT & Client Demos | API Integration | E-commerce Platforms | Airline IT Systems | P&L Tracking | Manual Settlement | DevOps Collaboration</p>
+      </div>
+      <div class="cv-section">
+        <h3>Education</h3>
+        <ul>
+          <li>B.Sc. Information System Management, Madras University (2009–2012)</li>
+          <li>HSC, State Board Tamil Nadu (2008)</li>
+          <li>SSLC, State Board Tamil Nadu (2006)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- 3. About Me -->
+  <!-- About Me -->
   <section id="about">
     <h2>About Me</h2>
     <ul>
@@ -109,7 +136,7 @@ Project Manager / Scrum Master
     </ul>
   </section>
 
-  <!-- 4. Project Samples -->
+  <!-- Project Samples -->
   <section id="project-samples">
     <h2>Project Samples</h2>
     <div class="projects-grid">
@@ -135,9 +162,9 @@ Project Manager / Scrum Master
     </div>
   </section>
 
-  <!-- 5. Projects / Work Experience -->
+  <!-- Projects / Work Experience -->
   <section id="projects">
-    <h2>My Projects / Work Experience</h2>
+    <h2>Projects / Work Experience</h2>
     <div class="projects-grid">
       <div class="project-card" onclick="openModalProject('B&G Technologies (2024-Present)',[
         'Led multiple IT initiatives including National777.com.',
@@ -182,7 +209,7 @@ Project Manager / Scrum Master
     </div>
   </div>
 
-  <!-- 6. Contact -->
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact-cards">
@@ -196,7 +223,6 @@ Project Manager / Scrum Master
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
@@ -220,23 +246,12 @@ function closeModalProject(e) {
   document.getElementById('modal-project').style.display = 'none';
 }
 
-// Floating crypto token effect
-const tokenLayer = document.getElementById('token-layer');
-for(let i=0;i<50;i++){
-  const t=document.createElement('div');
-  t.classList.add('token');
-  t.style.left=Math.random()*window.innerWidth+'px';
-  t.style.top=Math.random()*window.innerHeight+'px';
-  t.style.width=t.style.height=(8+Math.random()*8)+'px';
-  t.style.background=`hsl(${Math.random()*360},80%,70%)`;
-  tokenLayer.appendChild(t);
-}
-document.addEventListener('mousemove',e=>{
-  document.querySelectorAll('.token').forEach(t=>{
-    const rect=t.getBoundingClientRect();
-    const dx=(e.clientX-rect.left)/50;
-    const dy=(e.clientY-rect.top)/50;
-    t.style.transform=`translate(${dx}px,${dy}px)`;
+// CV scroll animation
+const cvSections = document.querySelectorAll('.cv-section');
+window.addEventListener('scroll', () => {
+  cvSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100) section.classList.add('visible');
   });
 });
 </script>
