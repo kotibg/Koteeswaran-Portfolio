@@ -37,7 +37,6 @@ ul li { margin-bottom:10px; }
 .project-card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
 .project-card h3 { margin-bottom:8px; font-size:18px; }
 .project-card p { color: var(--muted); font-size:14px; }
-.project-card img { width:100%; border-radius:12px; margin-bottom:12px; }
 .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:50; }
 .modal-content { background:#08102a; padding:20px; border-radius:16px; max-width:600px; width:90%; color:#fff; position:relative; max-height:80vh; overflow-y:auto; }
 .modal-close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; font-weight:bold; }
@@ -137,7 +136,7 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
         </ul>
       </div>
       <div class="cv-section">
-        <a href="resume.pdf" download style="display:inline-block;margin-top:12px;padding:10px 20px;background:var(--accent);color:#000;font-weight:600;border-radius:12px;">Download Resume</a>
+        <a href="resume.pdf" download style="display:inline-block;margin-top:12px;padding:10px 20px;background:var(--accent);color:#000;font-weight:600;border-radius:12px;">Download Resume (PDF)</a>
       </div>
     </div>
   </section>
@@ -153,26 +152,19 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     </ul>
   </section>
 
-  <!-- Project Samples -->
+  <!-- Project Samples (Text Only) -->
   <section id="project-samples">
     <h2>Project Samples</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <a href="https://national777.com" target="_blank">
-          <img src="images/national777.png" alt="National777.com">
-          <h3>National777.com</h3>
-          <p>B&G Technologies — Casino Gaming Platform</p>
-        </a>
+        <h3>National777.com</h3>
+        <p>B&G Technologies — Casino Gaming Platform</p>
       </div>
       <div class="project-card">
-        <a href="https://gamenation.in" target="_blank">
-          <img src="images/gamenation.png" alt="Gamenation.in">
-          <h3>Gamenation.in</h3>
-          <p>Gamenation — E-commerce / Gaming Project</p>
-        </a>
+        <h3>Gamenation.in</h3>
+        <p>Gamenation — E-commerce / Gaming Project</p>
       </div>
       <div class="project-card">
-        <img src="images/kiosk-app.png" alt="IndiGo KIOSK App">
         <h3>KIOSK App</h3>
         <p>IndiGo Airlines — Airport Self-Service App</p>
       </div>
@@ -185,26 +177,29 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     <div class="projects-grid">
       <div class="project-card" onclick="openModalProject('B&G Technologies (2024-Present)',[
         'Led multiple IT initiatives including National777.com.',
-        'Managed API integrations (Aura API, Sports API) and settlement systems.',
+        'Managed API integrations and settlement systems.',
         'Facilitated Scrum ceremonies: daily stand-ups, sprint planning, retrospectives.',
         'Led cross-functional teams: development, design, testing, DevOps.',
         'Ensured timely delivery, quality assurance, and P&L tracking.'
       ])">
-        <h3>B&G Technologies</h3><p>Click to view details</p>
+        <h3>B&G Technologies</h3>
+        <p>Click to view details</p>
       </div>
       <div class="project-card" onclick="openModalProject('FABC Solutions (2022-2024)',[
         'Planned and tracked software development projects.',
         'Implemented Jira & Confluence for Agile tracking (35% improved visibility).',
         'Supported client demos, documentation, and UAT sessions.'
       ])">
-        <h3>FABC Solutions</h3><p>Click to view details</p>
+        <h3>FABC Solutions</h3>
+        <p>Click to view details</p>
       </div>
       <div class="project-card" onclick="openModalProject('Gamenation (2019-2022)',[
         'Led Agile delivery for E-commerce projects.',
         'Coordinated payment gateway integration, order management, loyalty modules.',
         'Facilitated sprint planning, daily stand-ups, retrospectives.'
       ])">
-        <h3>Gamenation</h3><p>Click to view details</p>
+        <h3>Gamenation</h3>
+        <p>Click to view details</p>
       </div>
       <div class="project-card" onclick="openModalProject('IndiGo Airlines (2014-2019)',[
         'Managed airline IT projects: reservation systems, crew management, e-ticketing, loyalty programs.',
@@ -212,7 +207,8 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
         'Improved project delivery timelines by 20% using Agile methodologies.',
         'Mentored junior project coordinators and facilitated parallel sprints.'
       ])">
-        <h3>IndiGo Airlines</h3><p>Click to view details</p>
+        <h3>IndiGo Airlines</h3>
+        <p>Click to view details</p>
       </div>
     </div>
   </section>
@@ -231,16 +227,12 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     <h2>Testimonials</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <p>"Koteeswaran is an exceptional Project Manager who delivers projects on time and exceeds expectations."</p>
-        <span>- Former Client</span>
+        <p>"Koteeswaran led our complex IT initiatives efficiently, always on time and within scope."</p>
+        <span>— Manager, B&G Technologies</span>
       </div>
       <div class="testimonial-card">
-        <p>"Highly skilled in Agile and Scrum, Koteeswaran led our team to successful project delivery."</p>
-        <span>- Team Lead</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Excellent stakeholder management and attention to detail. A pleasure to work with."</p>
-        <span>- Colleague</span>
+        <p>"Great leadership in Agile transformation. Scrum ceremonies were always productive."</p>
+        <span>— Product Owner, Gamenation</span>
       </div>
     </div>
   </section>
