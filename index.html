@@ -13,47 +13,62 @@
   --muted: rgba(255,255,255,0.6);
   --font: 'Inter', sans-serif;
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font); background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark2)); color: #e9eef8; line-height: 1.5; }
+body {
+  font-family: var(--font);
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark2));
+  color: #e9eef8;
+  line-height: 1.5;
+}
 a { color: var(--accent); text-decoration: none; }
 header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; max-width:1120px; margin:0 auto; position:sticky; top:0; background:rgba(6,6,24,0.8); z-index:10; border-radius:12px;}
 header .logo { display:flex; align-items:center; gap:12px;}
 header .logo .mark { width:44px; height:44px; background:linear-gradient(135deg,#5cc8ff33,#8b5cf633); border-radius:12px; display:grid; place-items:center; font-weight:800;}
 nav a { margin-left:20px; font-weight:600; color: var(--muted); }
+
 main { max-width:1120px; margin:40px auto; padding:20px; }
 .hero { display:flex; gap:40px; align-items:center; flex-wrap:wrap; }
 .hero-text { flex:1; min-width:280px; }
 .hero-text h1 { font-size:48px; line-height:1.1; margin-bottom:12px; }
 .hero-text p { font-size:18px; color: var(--muted); margin-bottom:20px; }
 .profile-pic { width:180px; height:180px; border-radius:50%; border:3px solid var(--accent); object-fit:cover; }
+
 section { margin-top:60px; }
 section h2 { font-size:28px; margin-bottom:18px; border-left:4px solid var(--accent); padding-left:12px; }
 ul { list-style:disc; padding-left:20px; }
 ul li { margin-bottom:10px; }
+
 .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 .project-card { background:rgba(255,255,255,0.03); padding:20px; border-radius:16px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; position:relative; }
 .project-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
 .project-card h3 { margin-bottom:8px; font-size:18px; }
 .project-card p { color: var(--muted); font-size:14px; }
+
 .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:50; }
 .modal-content { background:#08102a; padding:20px; border-radius:16px; max-width:600px; width:90%; color:#fff; position:relative; }
 .modal-close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; font-weight:bold; }
+
 .contact-cards { display:flex; gap:20px; flex-wrap:wrap; }
 .contact-card { background:rgba(255,255,255,0.03); padding:18px; border-radius:16px; flex:1; min-width:200px; }
 .contact-card div { margin-bottom:8px; }
+
 footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:14px; }
+
 #token-layer{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:5}
 .token{position:fixed;width:12px;height:12px;border-radius:50%;mix-blend-mode:screen}
 </style>
 </head>
 <body>
+
 <div id="token-layer"></div>
+
 <header>
   <div class="logo">
     <div class="mark">KT</div>
     <div>
       <div style="font-weight:800">Koteeswaran T</div>
-      <div style="font-size:12px;color:var(--muted)">Project Manager • Full-stack • Web3</div>
+      <div style="font-size:12px;color:var(--muted)">Project Manager • Scrum Master • Web3</div>
     </div>
   </div>
   <nav>
@@ -62,11 +77,12 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     <a href="#contact">Contact</a>
   </nav>
 </header>
+
 <main>
   <section class="hero">
     <div class="hero-text">
-      <h1>Building scalable Web3 & eCommerce solutions.</h1>
-      <p>Project Manager & Full-stack developer with expertise in crypto nodes, testnets, staking, and online platforms.</p>
+      <h1>Driving IT & Web3 Projects to Success</h1>
+      <p>Project Manager / Scrum Master with 8+ years of experience leading IT, eCommerce, and Web3 initiatives.</p>
     </div>
     <img src="profile.jpg" alt="Koteeswaran T" class="profile-pic">
   </section>
@@ -74,27 +90,35 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
   <section id="about">
     <h2>About Me</h2>
     <ul>
-      <li>8+ years of experience managing Web3, eCommerce, and iGaming projects.</li>
-      <li>Full-stack development expertise: PHP, NodeJS, MySQL, Solidity.</li>
-      <li>Experienced in testnet node setup, staking, and crypto mining.</li>
-      <li>Passionate about early-stage Web3 product deployment and scaling teams.</li>
+      <li>8+ years managing complex IT & business transformation projects.</li>
+      <li>Skilled in Agile, Scrum, Waterfall, and cross-functional team leadership.</li>
+      <li>Expertise in project governance, API integrations, and P&L tracking.</li>
+      <li>Passionate about delivering technology solutions aligned with business goals.</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>My Projects / Work Experience</h2>
     <div class="projects-grid">
-      <div class="project-card" onclick="openModal('National777','PHP-based Casino B2B platform with P&L, manual settlements, and admin dashboards.')">
-        <h3>National777</h3>
+      <div class="project-card" onclick="openModal('Project Manager / Scrum Master | B&G Technologies','Led multiple IT initiatives including National777.com, API integrations, settlement systems, Scrum ceremonies, and cross-functional team management.')">
+        <h3>B&G Technologies (2024-Present)</h3>
         <p>Click to view details</p>
       </div>
-      <div class="project-card" onclick="openModal('Curriculum Vitae','Professional CV showcasing my career and achievements.')">
+      <div class="project-card" onclick="openModal('IT Project Coordinator | FABC Solutions','Planned and tracked software development projects, implemented Jira & Confluence, supported client demos, documentation, and UAT.')">
+        <h3>FABC Solutions (2022-2024)</h3>
+        <p>Click to view details</p>
+      </div>
+      <div class="project-card" onclick="openModal('Scrum Master | Gamenation','Led Agile delivery for E-commerce projects, payment gateway integration, sprint planning, and backlog prioritization.')">
+        <h3>Gamenation (2019-2022)</h3>
+        <p>Click to view details</p>
+      </div>
+      <div class="project-card" onclick="openModal('Associate Project Manager | InterGlobe Aviation','Managed airline IT projects: reservation systems, crew management, e-ticketing, loyalty programs, Agile mentorship.')">
+        <h3>IndiGo Airlines (2014-2019)</h3>
+        <p>Click to view details</p>
+      </div>
+      <div class="project-card" onclick="openModalCV()">
         <h3>Curriculum Vitae</h3>
-        <p>Click to view details</p>
-      </div>
-      <div class="project-card" onclick="openModal('Testnet & Node Setup','Experience running Mantle, Vana, Subspace, and other Web3 testnet nodes.')">
-        <h3>Testnet & Node Setup</h3>
-        <p>Click to view details</p>
+        <p>Click to view full CV</p>
       </div>
     </div>
   </section>
@@ -104,6 +128,48 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
       <span class="modal-close" onclick="closeModal(event)">&times;</span>
       <h3 id="modal-title"></h3>
       <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <div id="modal-cv" class="modal" onclick="closeModalCV(event)">
+    <div class="modal-content" style="max-height:80vh; overflow-y:auto;">
+      <span class="modal-close" onclick="closeModalCV(event)">&times;</span>
+      <div style="white-space:pre-line; font-size:14px; line-height:1.5;">
+Koteeswaran
++91 9445712235 | koteeswaran.t@hotmail.com | India
+Project Manager / Scrum Master
+
+8+ years of experience driving complex IT and business transformation projects with
+expertise in Agile, Scrum, and Waterfall methodologies. Skilled in managing cross-functional
+teams, implementing project governance, and ensuring delivery within scope, time, and
+budget. Strong track record of stakeholder management, process optimization, and aligning
+technology solutions with business goals.
+
+Work Experience
+Project Manager / Scrum Master | B&G Technologies
+Jun 2024 – Present | India
+• Led multiple IT initiatives including National777.com, API integrations, settlement systems, Scrum ceremonies, and cross-functional team management.
+
+IT Project Coordinator | FABC Solutions
+Mar 2022 – May 2024 | India
+• Planned and tracked software development projects, implemented Jira & Confluence, supported client demos, documentation, and UAT.
+
+Scrum Master | Gamenation (E-Commerce Company)
+Nov 2019 – Feb 2022 | India
+• Led Agile delivery for E-commerce projects, payment gateway integration, sprint planning, and backlog prioritization.
+
+Associate Project Manager | InterGlobe Aviation Limited (IndiGo Airlines)
+Feb 2014 – Oct 2019 | India
+• Managed airline IT projects: reservation systems, crew management, e-ticketing, loyalty programs, Agile mentorship.
+
+Key Skills
+Agile Project Management | Scrum Framework | Sprint Planning & Execution | Stakeholder Management | Risk & Issue Tracking | Jira, Confluence | UAT & Client Demos | API Integration | E-commerce Platforms | Airline IT Systems | P&L Tracking | Manual Settlement Systems | DevOps Collaboration
+
+Education
+B.Sc. Information System Management | Madras University 2009–2012
+HSC | State Board, Tamil Nadu 2008
+SSLC | State Board, Tamil Nadu 2006
+      </div>
     </div>
   </div>
 
@@ -125,10 +191,13 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     </div>
   </section>
 </main>
+
 <footer>
   © <span id="year"></span> Koteeswaran T — Built with HTML & JS
 </footer>
+
 <script>
+// Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Modal functions
@@ -142,6 +211,65 @@ function closeModal(e) {
     document.getElementById('modal').style.display='none';
   }
 }
+function openModalCV(){
+  document.getElementById('modal-cv').style.display='flex';
+}
+function closeModalCV(e){
+  if(e.target.id==='modal-cv' || e.target.className==='modal-close'){
+    document.getElementById('modal-cv').style.display='none';
+  }
+}
 
-// Token particle animation
-const PO
+// Token particles
+const POOL = []; 
+const POOL_SIZE = 30; 
+const colors=['#00E6A6','#8B5CF6','#FFB86B','#5CC8FF','#FFD166'];
+for(let i=0;i<POOL_SIZE;i++){
+  const el=document.createElement('div');
+  el.className='token';
+  el.style.opacity='0';
+  document.getElementById('token-layer').appendChild(el);
+  POOL.push(el);
+}
+let poolIdx=0;
+function spawnToken(x,y,dx,dy,size=18,life=700,color=null){
+  const el=POOL[poolIdx];
+  poolIdx=(poolIdx+1)%POOL_SIZE;
+  el.style.transition='none';
+  el.style.transform=`translate(${x-size/2}px,${y-size/2}px) scale(0.6)`;
+  el.style.width=size+'px';
+  el.style.height=size+'px';
+  el.style.borderRadius='50%';
+  el.style.background=color||colors[Math.floor(Math.random()*colors.length)];
+  el.style.opacity='1';
+  el.style.pointerEvents='none';
+  requestAnimationFrame(()=>{
+    el.style.transition=`transform ${life}ms cubic-bezier(.2,.8,.2,1), opacity ${life}ms linear`;
+    el.style.transform=`translate(${x+dx}px,${y+dy}px) scale(0.2) rotate(${Math.random()*720}deg)`;
+    el.style.opacity='0';
+  });
+}
+let last=0;
+document.addEventListener('mousemove',e=>{
+  const now=performance.now();
+  if(now-last<25) return;
+  last=now;
+  const speed=Math.random()*18+6;
+  const ang=(Math.random()-0.5)*Math.PI/3;
+  spawnToken(e.clientX,e.clientY,Math.cos(ang)*speed,Math.sin(ang)*speed,12,700);
+});
+document.addEventListener('click',e=>{
+  const count=14+Math.floor(Math.random()*8);
+  for(let i=0;i<count;i++){
+    const ang=(i/count)*Math.PI*2+(Math.random()-0.5)*0.6;
+    const dist=30+Math.random()*110;
+    const dx=Math.cos(ang)*dist;
+    const dy=Math.sin(ang)*dist;
+    spawnToken(e.clientX,e.clientY,dx,dy,14,900);
+  }
+});
+</script>
+
+</body>
+</html>
+
