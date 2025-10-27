@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koteeswaran — Portfolio</title>
+<title>Koteeswaran T — Portfolio</title>
+<meta name="description" content="Portfolio of Koteeswaran T, Project Manager / Scrum Master. Experience in IT, E-commerce, Web3, Agile, Scrum, and project leadership.">
+<meta name="keywords" content="Koteeswaran, Project Manager, Scrum Master, Agile, IT Projects, Web3, E-commerce, Portfolio">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -32,9 +34,10 @@ ul { list-style:disc; padding-left:20px; }
 ul li { margin-bottom:10px; }
 .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 .project-card { background:rgba(255,255,255,0.03); padding:20px; border-radius:16px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; position:relative; }
-.project-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
 .project-card h3 { margin-bottom:8px; font-size:18px; }
 .project-card p { color: var(--muted); font-size:14px; }
+.project-card img { width:100%; border-radius:12px; margin-bottom:12px; }
 .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:50; }
 .modal-content { background:#08102a; padding:20px; border-radius:16px; max-width:600px; width:90%; color:#fff; position:relative; max-height:80vh; overflow-y:auto; }
 .modal-close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; font-weight:bold; }
@@ -50,6 +53,16 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
 .cv-section ul { list-style: disc; padding-left: 20px; }
 .cv-section ul li { margin-bottom: 10px; }
 .cv-section.visible h3, .cv-section.visible p, .cv-section.visible li { opacity:1; transform:translateY(0); }
+/* Testimonials */
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.testimonial-card { background:rgba(255,255,255,0.03); padding:20px; border-radius:16px; font-style:italic; transition: transform 0.3s, box-shadow 0.3s; }
+.testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+.testimonial-card p { margin-bottom:8px; }
+.testimonial-card span { font-weight:600; color:var(--accent); font-style:normal; }
+@media(max-width:768px){
+  .hero { flex-direction:column; align-items:center; text-align:center; }
+  nav a { margin-left:12px; font-size:14px; }
+}
 </style>
 </head>
 <body>
@@ -67,6 +80,7 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
     <a href="#projects">Projects</a>
     <a href="#about">About</a>
     <a href="#cv">Curriculum Vitae</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -121,6 +135,9 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
           <li>HSC, State Board Tamil Nadu (2008)</li>
           <li>SSLC, State Board Tamil Nadu (2006)</li>
         </ul>
+      </div>
+      <div class="cv-section">
+        <a href="resume.pdf" download style="display:inline-block;margin-top:12px;padding:10px 20px;background:var(--accent);color:#000;font-weight:600;border-radius:12px;">Download Resume</a>
       </div>
     </div>
   </section>
@@ -208,6 +225,25 @@ footer { text-align:center; margin:60px 0 20px; color: var(--muted); font-size:1
       <ul id="modal-bullets"></ul>
     </div>
   </div>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"Koteeswaran is an exceptional Project Manager who delivers projects on time and exceeds expectations."</p>
+        <span>- Former Client</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Highly skilled in Agile and Scrum, Koteeswaran led our team to successful project delivery."</p>
+        <span>- Team Lead</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Excellent stakeholder management and attention to detail. A pleasure to work with."</p>
+        <span>- Colleague</span>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section id="contact">
